@@ -7,27 +7,28 @@
 …
 10 – четное число */
 
-// const arr = [];
-// for (let i = 0; i <= 10; i++) {
-//     if (i === 0) {
-//         console.log(i + ' - это ноль');
-//     }
-//     else if (i % 2) {
-//         console.log(i + ' - нечетное число');
-//     }
-//     else {
-//         console.log(i + ' - четное число');
-//     }
-// }
+const array = [];
+for (let i = 0; i <= 10; i++) {
+    if (i === 0) {
+        console.log(i + ' - это ноль');
+    }
+    else if (i % 2) {
+        console.log(i + ' - нечетное число');
+    }
+    else {
+        console.log(i + ' - четное число');
+    }
+}
  
 
 /* Задание 2
 Дан массив [1, 2, 3, 4, 5, 6, 7]
 Сделайте из этого массива следующий [1, 2, 3, 6, 7]. */
 
-// const arr = [1, 2, 3, 4, 5, 6, 7];
-// arr.splice(3,2);
-// console.log(arr);
+const arr = [1, 2, 3, 4, 5, 6, 7];
+arr.splice(3,2);
+console.log(arr);
+
 
 /* Задание 3
 Используя Math.random() вам необходимо генерировать цифры от 0 до 9, и создать массив состоящий из 5 таких элементов
@@ -36,28 +37,27 @@
 3. Найти есть ли в этом массиве число 3. */
 
 
-const random = [];
+const arrRandom = [];
 let sum = 0;
 let flag = false;
 
 for (let i = 0; i < 5; i++) {
-    random[i] = Math.abs(Math.ceil(Math.random() * 10 - 1));
-    sum += random[i];
-    if (random[i] === 3) {
+    arrRandom[i] = Math.abs(Math.ceil(Math.random() * 10 - 1));
+    sum += arrRandom[i];
+    if (arrRandom[i] === 3) {
         flag = true
     }
 }
 
-console.log(`Сгенерированный массив: [${random}]`);
+console.log(`Сгенерированный массив: [${arrRandom}]`);
 console.log(`Сумма элементов: ${sum}`);
-console.log(`Минимальное число: ${random.reduce((a, b) => Math.min(a, b))}`);
+console.log(`Минимальное число: ${arrRandom.reduce((a, b) => Math.min(a, b))}`);
 
 if (flag === true) {
-    console.log(`В массиве есть число 3.`);
+    console.log(`В массиве есть число 3`);
 } else {
-    console.log(`В массиве нет числа 3.`);
+    console.log(`В массиве нет числа 3`);
 }
-
 
 
 /* *Необязательное задание. *
@@ -69,6 +69,9 @@ xxx
 xxxx
 xxxxx */
 
-for (let i = 0; i < 20; i++) {
-    console.log('x'*i);
+
+let str = "x";
+console.log(str);
+for(let i = 0; i < 20; i++){
+console.log(str += "x");
 }
