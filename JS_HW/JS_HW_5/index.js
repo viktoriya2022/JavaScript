@@ -114,9 +114,11 @@ console.log(otherProducts.filter(el => el.photos ? el.photos.length : undefined)
 
 console.log(otherProducts.sort((a, b) => a.price - b.price));
 
-// products.forEach((el) => {
-//     console.log(`id: ${el.id}, price: ${el.price}, photos: ${el.photos} `);
-// });
+// Другой вариант вывода
+
+products.forEach((el) => {
+    console.log(`id: ${el.id}, price: ${el.price}, photos: ${el.photos} `);
+});
 
 
 /***Задание 5**
