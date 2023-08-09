@@ -96,46 +96,56 @@ console.log(`Total sum of order ${order.orderNumber}: ${order.getTotalPrice()}.`
 /* ==========================
 Задача необязательная для выполнения
 
-Задача: Создать класс "Студент", который имеет приватные свойства "имя", "возраст" и "средний балл". Класс должен иметь методы для установки и получения значений свойств, а также метод для вывода информации о студенте.*/
+Задача: Создать класс "Студент", который имеет приватные свойства "имя", 
+"возраст" и "средний балл". Класс должен иметь методы для установки и получения значений свойств, 
+а также метод для вывода информации о студенте.*/
 
-#ageValue = 1;
-    constructor(name, age){
-        this.name = name;
+
+class Student {
+    #nameValue = null;
+    #ageValue = null;
+    #averageGradeValue = null;
+    constructor(name, age, averageGrade) {
+        this.setName(name);
         this.setAge(age);
+        this.setAverageGrade(averageGrade);
     }
+
+    setName(newName) {
+        this.#nameValue = newName;
+    }
+
+    setAge(newAge) {
+        this.#ageValue = newAge;
+    }
+
+    setAverageGrade(newAverageGrade) {
+        this.#averageGradeValue = newAverageGrade;
+    }
+
+    getName(){
+        return this.#nameValue;
+    }
+
     getAge(){
         return this.#ageValue;
     }
-    setAge(value){ if(value>0 && value < 110) this.#ageValue = value; }
-}
-//===============
-class Student {
-    constructor()
-        _name = null;
-        _age = null;
-        _averageGrade = null;
-    
-    setName(name) {
-        _name = name;
+
+    getAverageGrade(){
+        return this.#averageGradeValue;
     }
 
-    setAge(age) {
-        _age = age;
-    }
-
-    setAverageGrade(averageGrade) {
-        _averageGrade = averageGrade;
-    }
-
-    
     displayInfo() {
-        console.log(this._name, this._age, this._averageGrade);
+        console.log(`name: ${this.#nameValue}\nage: ${this.#ageValue}\naverageGrade: ${this.#averageGradeValue}`);
     }
 }
-
 
 const student = new Student();
 student.setName('Питер Паркер');
 student.setAge(20);
 student.setAverageGrade(85);
 student.displayInfo();
+console.log(`--------`);
+console.log(student.getName());
+console.log(student.getAge());
+console.log(student.getAverageGrade());
