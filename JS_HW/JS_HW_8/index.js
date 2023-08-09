@@ -92,3 +92,50 @@ order.addProduct(product2);
 console.log(`Your order:`);
 console.log(order.products);
 console.log(`Total sum of order ${order.orderNumber}: ${order.getTotalPrice()}.`); // Вывод: 600
+
+/* ==========================
+Задача необязательная для выполнения
+
+Задача: Создать класс "Студент", который имеет приватные свойства "имя", "возраст" и "средний балл". Класс должен иметь методы для установки и получения значений свойств, а также метод для вывода информации о студенте.*/
+
+#ageValue = 1;
+    constructor(name, age){
+        this.name = name;
+        this.setAge(age);
+    }
+    getAge(){
+        return this.#ageValue;
+    }
+    setAge(value){ if(value>0 && value < 110) this.#ageValue = value; }
+}
+//===============
+class Student {
+    constructor()
+        _name = null;
+        _age = null;
+        _averageGrade = null;
+    
+    setName(name) {
+        _name = name;
+    }
+
+    setAge(age) {
+        _age = age;
+    }
+
+    setAverageGrade(averageGrade) {
+        _averageGrade = averageGrade;
+    }
+
+    
+    displayInfo() {
+        console.log(this._name, this._age, this._averageGrade);
+    }
+}
+
+
+const student = new Student();
+student.setName('Питер Паркер');
+student.setAge(20);
+student.setAverageGrade(85);
+student.displayInfo();
